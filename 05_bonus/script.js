@@ -15,8 +15,19 @@ function hourlyGreeting(name){//Funzione hourlyGreeting
         //Restituisce codice d'errore -1 se non lo è
         return -1;
     }
+    let saluto = ""; //Stringa vuota per il saluto iniziale
     const currentDate = new Date(); // Creiamo un nuovo oggetto Date
-    const currentTime = currentDate.getHours().toString(); // Recuperiamo che ora è da currentDate e trasformiamolo in una stringa.
+    const currentTime = Number(currentDate.getHours().toString()); // Recuperiamo che ora è da currentDate e trasformiamolo in una stringa, 
+    // dopodiché lo trasformiamo in un number, tanto sappiamo sempre che sarà un number
+    if(currentTime < 13 && currentTime > 3){
+        saluto = `Buongiorno ${name}`;
+    }
+    else if(currentTime < 17){
+        saluto = `Buon pomeriggio ${name}`;
+    }
+    else {
+        saluto = `Buona sera ${name}`;
+    }
 }
 
 // Invoca la funzione qui e stampa il risultato in console
