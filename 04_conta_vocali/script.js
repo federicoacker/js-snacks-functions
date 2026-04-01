@@ -23,6 +23,14 @@ function howManyVowels(stringToCount){//Funzione che conta il numero di vocali i
 
 
 // Invoca la funzione qui e stampa il risultato in console
-
+const numberOfVowels = howManyVowels(word);
+if(numberOfVowels === -1){
+    console.error(`Error:
+        Hai passato come argomento a howManyVowels(stringToCount):
+        - Qualcosa che non è una stringa`);
+}
+else{
+    console.log(`La parola ${word} contiene ${numberOfVowels} vocali`);
+}
 
 //Risultato atteso se si passa 'javascript': 3 (a, a, i)
