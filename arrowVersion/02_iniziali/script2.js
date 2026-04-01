@@ -1,19 +1,19 @@
 /* Scrivi una funzione che accetti un array di nomi e restituisca nuovo un array con le iniziali di ogni parola dell'array fornito */
 
-const names = ["Anna", "Luca", "Marco", "Adele", "Giovanni", "Alessandra"];
+const names = ["Anna", "Luca", "Marco", "Adele", "Giovanni", "Alessandra", 32];
 
 
 
-const initials = (stringArray) => {
+function initials(stringArray)  {
      //Vorrei prima controllare che sia effettivamente un array, ritornando -1 se non lo è
     if(!Array.isArray(stringArray)){
-        return -1;
+        throw new TypeError("Ciò che è stato passato alla funzione initials(stringArray) come argomento non è un array")
     }
     //Vorrei poi fare un controllo per vedere che i valori all'interno siano tutti di tipo string, ritornando un codice d'errore se c'è qualcosa che non è una stringa dentro
     for(let i = 0; i < stringArray.length; i++){ 
     const currentString = stringArray[i];
         if(typeof(currentString) !== "string"){
-            return -2; //Ritorno -2 per comunicare che c'è un problemas
+            throw new TypeError("E' stato passato un array alla funzione initials(stringArray) che non contiene solo stringhe"); //Ritorno -2 per comunicare che c'è un problemas
         }
     }
     //Adesso l'array è sanificato e ci sono solo stringhe, a questo punto, creo un nuovo array che andrà ad avere al suo interno le iniziali
@@ -23,20 +23,17 @@ const initials = (stringArray) => {
         initialsArray.push(currentString[0]);
     }
     return initialsArray;
-};
+}
 
 // Invoca la funzione qui e stampa il risultato in console
-const initialsArray = initials(names); // Lo assegno alla variabile initialsArray
-if (initialsArray === -1){ //Controllo che non mi abbia restituito -1
-    console.error("E' stato passato un argomento alla funzone initials() che non è un array");
-    console.log(names);
-}
-else if(initialsArray === -2){
-    console.error("E' stato passato un array che non contiene solo stringhe, ma anche altri elementi");
-    console.log(names);
-}
-else{
+try{
+    const initialsArray = initials(names); // Lo assegno alla variabile initialsArray
     console.log(initialsArray); // Loggo l'array
+}catch(error){
+    console.log(`Error:
+${error.name} 
+${error.message}`);
 }
+
 
 //Risultato atteso: ["A", "L", "M", "A", "G", "A"]
