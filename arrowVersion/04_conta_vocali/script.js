@@ -1,0 +1,36 @@
+/* Scrivi una funzione che accetti una stringa e restituisca il numero di vocali contenute al suo interno */
+
+const word = 'javascript';
+
+
+// Dichiara la funzione qui.
+function howManyVowels(stringToCount){//Funzione che conta il numero di vocali in una stringa, se non è una stringa restituisce -1
+    if(typeof(stringToCount) !== "string"){
+        return -1;
+    }
+    const vowels = ['a','e','i','o','u']; // Array di vocali
+    let sumVowels = 0; //Somma di quante vocali ci sono nella parola
+
+    for(let i = 0; i<stringToCount.length; i++){ // Iteriamo nella stringa
+        const currentLetter = stringToCount[i]; // Assegnamo currentLetter alla lettera corrente
+        if(vowels.includes(currentLetter.toLowerCase())){ //Vediamo se vowels include la currentLetter (in lowercase così siamo sicuri che sia A sia a vengano contati);
+            sumVowels++; //Incrememntiamo sumVowels;
+        }
+    }
+
+    return sumVowels; //Restituiamo sumVowels
+}
+
+
+// Invoca la funzione qui e stampa il risultato in console
+const numberOfVowels = howManyVowels(word);
+if(numberOfVowels === -1){
+    console.error(`Error:
+        Hai passato come argomento a howManyVowels(stringToCount):
+        - Qualcosa che non è una stringa`);
+}
+else{
+    console.log(`La parola ${word} contiene ${numberOfVowels} vocali`);
+}
+
+//Risultato atteso se si passa 'javascript': 3 (a, a, i)
