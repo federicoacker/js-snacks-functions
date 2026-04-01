@@ -19,19 +19,28 @@ function hourlyGreeting(name){//Funzione hourlyGreeting
     const currentDate = new Date(); // Creiamo un nuovo oggetto Date
     const currentTime = Number(currentDate.getHours().toString()); // Recuperiamo che ora è da currentDate e trasformiamolo in una stringa, 
     // dopodiché lo trasformiamo in un number, tanto sappiamo sempre che sarà un number
-    if(currentTime < 13 && currentTime > 3){
-        saluto = `Buongiorno ${name}`;
+    if(currentTime < 13 && currentTime > 3){ // Se l'ora corrente è tra 3 e 13 allora è giorno
+        saluto = `Buongiorno ${name}`; // Buongiorno
     }
-    else if(currentTime < 17){
-        saluto = `Buon pomeriggio ${name}`;
+    else if(currentTime < 17){ //Se l'ora corrente è sotto le 17 ma è sopra le 13 (garantito dalla funzionalità esclusiva di else if) allora è pomeriggio
+        saluto = `Buon pomeriggio ${name}`; //Buon pomeriggio
     }
-    else {
-        saluto = `Buona sera ${name}`;
+    else { //Altrimenti è sera
+        saluto = `Buona sera ${name}`; //Buona sera
     }
+    return saluto; //Ritorno il saluto
 }
 
 // Invoca la funzione qui e stampa il risultato in console
-
+const saluto = hourlyGreeting(name);
+if(saluto === -1){
+    console.error(`Error:
+        Hai passato alla funzione hourlyGreeting(name):
+        - Qualcosa che non è una stringa o è una stringa vuota`);
+}
+else{
+    console.log(saluto);
+}
 
 
 //Risultato atteso se si passa 'Mario' alle 18: // Buonasera Mario.
