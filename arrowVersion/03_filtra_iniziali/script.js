@@ -5,7 +5,7 @@ const names = ["Anna", "Luca", "Marco", "Adele", "Laura", "Alessandra"];
 
 // Dichiara la funzione qui.
 const filterByFirstLetter = (stringArray, controlChar) => { // Funzione filterByFirstLetter
-    // Voglio innanzitutto controllare che stringArray sia un array e che controlChar sia una stringa, se non lo è farò il toString di controlString o restituirò -1 per l'array.
+    // Voglio innanzitutto controllare che stringArray sia un array e che controlChar sia una stringa, se non lo è farò il toString di controlChar o restituirò -1 per l'array.
     if(!Array.isArray(stringArray)){
         return -1;
     }
