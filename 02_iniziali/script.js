@@ -22,12 +22,17 @@ function initials(stringArray){ //Funzione initials
         const currentString = stringArray[i];
         initialsArray.push(currentString[0]);
     }
-    
+    return initialsArray;
 }
 
 
 // Invoca la funzione qui e stampa il risultato in console
-
+const initialsArray = initials(names); // Lo assegno alla variabile initialsArray
+if (initialsArray !== -1){ //Controllo che non mi abbia restituito -1
+    console.log(initialsArray); // Loggo l'array
+}else{
+    console.error("E' stato passato un argomento alla funzone initials() che non è un array");
+}
 
 
 //Risultato atteso: ["A", "L", "M", "A", "G", "A"]
