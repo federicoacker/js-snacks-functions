@@ -2,10 +2,8 @@
 
 const names = ["Anna", "Luca", "Marco", "Adele", "Giovanni", "Alessandra"];
 
-
-// Dichiara la funzione qui.
-function initials(stringArray){ //Funzione initials
-    //Vorrei prima controllare che sia effettivamente un array, ritornando -1 se non lo è
+const initials = (stringArray) => {
+     //Vorrei prima controllare che sia effettivamente un array, ritornando -1 se non lo è
     if(!Array.isArray(stringArray)){
         return -1;
     }
@@ -23,8 +21,7 @@ function initials(stringArray){ //Funzione initials
         initialsArray.push(currentString[0]);
     }
     return initialsArray;
-}
-
+};
 
 // Invoca la funzione qui e stampa il risultato in console
 const initialsArray = initials(names); // Lo assegno alla variabile initialsArray
