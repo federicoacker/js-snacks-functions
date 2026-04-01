@@ -10,7 +10,14 @@ function initials(arrayDiStringhe){ //Funzione initials
         return -1;
     }
     //Vorrei poi fare un controllo per vedere che i valori all'interno siano tutti di tipo string, rimuovendo quelli che non sono stringhe
-
+    for(let i = 0; i < arrayDiStringhe.length; i++){
+        const stringaCorrente = arrayDiStringhe[i];
+        if(typeof(stringaCorrente) !== "string"){
+            arrayDiStringhe.splice(i,1);
+        }
+    }
+    //Adesso l'array è sanificato e ci sono solo stringhe, a questo punto, creo un nuovo array che andrà ad avere al suo interno le iniziali
+    
 }
 
 
