@@ -4,19 +4,24 @@ const names = ["Anna", "Luca", "Marco", "Adele", "Giovanni", "Alessandra"];
 
 
 // Dichiara la funzione qui.
-function initials(arrayDiStringhe){ //Funzione initials
+function initials(stringArray){ //Funzione initials
     //Vorrei prima controllare che sia effettivamente un array, ritornando -1 se non lo è
-    if(!Array.isArray(arrayDiStringhe)){
+    if(!Array.isArray(stringArray)){
         return -1;
     }
     //Vorrei poi fare un controllo per vedere che i valori all'interno siano tutti di tipo string, rimuovendo quelli che non sono stringhe
-    for(let i = 0; i < arrayDiStringhe.length; i++){
-        const stringaCorrente = arrayDiStringhe[i];
-        if(typeof(stringaCorrente) !== "string"){
-            arrayDiStringhe.splice(i,1);
+    for(let i = 0; i < stringArray.length; i++){
+        const currentString = stringArray[i];
+        if(typeof(currentString) !== "string"){
+            stringArray.splice(i,1);
         }
     }
     //Adesso l'array è sanificato e ci sono solo stringhe, a questo punto, creo un nuovo array che andrà ad avere al suo interno le iniziali
+    const initialsArray = [];
+    for(let i = 0; i < stringArray.length; i++){
+        const currentString = stringArray[i];
+        initialsArray.push(currentString[0]);
+    }
     
 }
 
