@@ -4,11 +4,11 @@ const userName = 'Mario';
 
 
 // Dichiara la funzione qui.
-function saluto(name){
-    if(typeof(name) !== "string" || name === ''){
+function saluto(name){ //Funzione saluto
+    if(typeof(name) !== "string" || name === ''){ //Controlla se ciò che gli è stato passato è effettivamente una stringa, restituisce errore se non lo è
         console.error("E' stato passato un valore che non è una stringa, o una stringa vuota alla funzione saluto()");
     }
-    else{
+    else{ // Altrimenti restituisce un log con Ciao name
         console.log(`Ciao ${name}`);
     }
 }
