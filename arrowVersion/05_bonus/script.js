@@ -9,7 +9,7 @@ const name = 'Mario';
 
 
 // Dichiara la funzione qui.
-function hourlyGreeting(name){//Funzione hourlyGreeting
+const hourlyGreeting = name => {//Funzione hourlyGreeting
     //Controllo della validità di name come stringa come al solito
     if(typeof(name) !== "string" || name === ''){ //Controlla se ciò che gli è stato passato è effettivamente una stringa
         //Restituisce codice d'errore -1 se non lo è
