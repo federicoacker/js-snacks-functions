@@ -4,7 +4,7 @@ const word = 'javascript';
 
 
 // Dichiara la funzione qui.
-function howManyVowels(stringToCount){//Funzione che conta il numero di vocali in una stringa, se non è una stringa restituisce -1
+const howManyVowels = (stringToCount) => {//Funzione che conta il numero di vocali in una stringa, se non è una stringa restituisce -1
     if(typeof(stringToCount) !== "string"){
         return -1;
     }
