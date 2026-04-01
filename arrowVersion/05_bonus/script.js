@@ -17,8 +17,7 @@ const hourlyGreeting = name => {//Funzione hourlyGreeting
     }
     let saluto = ""; //Stringa vuota per il saluto iniziale
     const currentDate = new Date(); // Creiamo un nuovo oggetto Date
-    const currentTime = Number(currentDate.getHours().toString()); // Recuperiamo che ora è da currentDate e trasformiamolo in una stringa, 
-    // dopodiché lo trasformiamo in un number, tanto sappiamo sempre che sarà un number
+    const currentTime = currentDate.getHours(); // Recuperiamo che ora è da currentDate che è un Number
     if(currentTime < 13 && currentTime > 3){ // Se l'ora corrente è tra 3 e 13 allora è giorno
         saluto = `Buongiorno ${name}`; // Buongiorno
     }
